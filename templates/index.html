@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+<center>{% block content %}
+    <div class="index">
+        <h2>Users</h2>
+        <hr>
+        {% for user in users %}
+        <p class="users"><a href="/blog?userid={{user.id}}">{{ user.username }}</a></p>
+        {% endfor %}
+    </div>
+
+{% endblock %}</center>
