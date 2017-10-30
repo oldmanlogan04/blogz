@@ -1,12 +1,27 @@
 {% extends "base.html" %}
 
-<center>{% block content %}
-    <div class="index">
-        <h2>Users</h2>
-        <hr>
-        {% for user in users %}
-        <p class="users"><a href="/blog?userid={{user.id}}">{{ user.username }}</a></p>
-        {% endfor %}
-    </div>
+{% block content %}
 
-{% endblock %}</center>
+        <h2><center>Users</center></h2>
+        <hr />
+
+        {% if users|length == 0 %}
+        <p>Nothing here yet</p>
+        {% else %}
+
+        {% for user in users %}
+        <h2>
+            <left>
+
+        <a href="/blog?user={{user.id}}">{{user.username}}</a>
+            </left>
+        </h2>
+
+        {% endfor %}
+
+    {% endif %}
+
+    <hr />
+
+
+{% endblock %}

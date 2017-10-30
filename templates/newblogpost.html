@@ -1,22 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Blogs!</h1>
-    <form source ="/" method='post'>
+    <h1>I dont like blogz, sam i am</h1>
+
+    <form source ="/newblogpost" method='post'>
+
         <label>
             Blog Title:
-            <input type="text" name='new_blog_title'/>
-            <span class="error">{{no_name}}</span>
+            <input type="text" name='title' id="stormtrooper" value="" style="width:400px; height:40px;"/></br>
         </label>
             <br>
+
         <label>
             Blog Post:
 
-            <textarea name="new_blog_post"></textarea>
+            <textarea name="body"></textarea>
             <br>
-            <input type="submit">
-            
-            <span class="error">{{no_content}}</span>
         </label>
+            <input type="submit" value='Add Stuff'/>
+           
+        
      </form>
 {% endblock %}

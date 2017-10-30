@@ -1,14 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<h2> dilly dilly Posts </h2>
+<hr>
+
+{% if user_blogs|length ==0 %}
+<p>Dilly Dilly No Posts </p>
+
+{% else %}
+
+        {%for blog in user_blogs %}
+            <h2><a href="/blog?id={{blog.id}}">{{blog.title}}</a></h2>
+            <p>{{blog.body}}</p>
+
+
+{% endfor %}
+{% endif %}
+
+</hr>
+
  
 
-    <ul>
-        
-        <h1>{{blogpost.name}}</h1>
-        {{blogpost.content}}
-    
-    </ul>
 
    
 {% endblock %}

@@ -1,21 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Ye Blogs!</h1>
-    
-    <hr />
+   
+<hr>
 
-    {% if blogs|length == 0 %}
-    <p>Na Blogs yet</p>
-    {% else %}
+<h2>{{blogposts.title}}</h2>
+<p>{{blogposts.body}}</p>
 
-    <ul>
-        {% for blogpost in blogs %}
-        <h1><a href="/blog?blogid={{blogpost.id}}">{{blogpost.name}}</a></h1>
-        {{blogpost.content}}
-        {% endfor %}
-    </ul>
+<p>By <a href="/blog?user={{blogposts.owner_id}}">{{blogposts.owner.username}}</a></p>
 
-    {% endif %}
+</hr>
+
 {% endblock %}
-

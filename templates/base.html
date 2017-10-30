@@ -1,12 +1,40 @@
 <!doctype html>
 <html>
     <head>
-        <title>{{title}}</title>
-        
+
+        <style>
+            .error {
+                color: red;
+
+            }
+        </style>
+
     </head>
+
+      <title>{{title}}</title>
+
 <body>
-        <a href="/">List of Ye Blogs</a>
-        <a href="/newblog">Add Ye New Blog</a>
+
+    <div>
+        <a href='/'>List of Ye Blog Users</a></br></br>
+        <a href='/blog'>All Ye Blogs</a></br></br>
+        <a href='/newblogpost'>add Ya NEwly Blog</a></br></br>
+        <a href='/login'>This way to the blogz...</a></br></br>
+        <a href='/logout'>Im out of here</a></br>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+<ul>
+    {% for message in messages %}
+    <li>{{message}}</li>
+
+
+    {% endfor %}
+    
+</ul>
+
+    {% endwith %}
+
     {% block content %}
     {% endblock %}
 
